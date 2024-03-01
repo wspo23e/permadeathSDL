@@ -1,0 +1,22 @@
+-- Character
+local p = game.Players.LocalPlayer
+local c = p.Character
+
+-- Fake Character
+local m = Instance.new("Model")
+m.Name = "Fake Character"
+local t = Instance.new("Part", m)
+t.Name = "Torso"
+t.Position = c.HumanoidRootPart.Position
+local h = Instance.new("Part", m)
+h.Name = "Head"
+h.Position = c.HumanoidRootPart.Position
+local hum = Instance.new("Humanoid", m)
+
+-- Bypass
+p.Character = m
+wait(3)
+p.Character = c
+wait(3)
+
+p.Character.Humanoid.Health = 0
